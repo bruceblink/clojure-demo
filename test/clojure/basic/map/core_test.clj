@@ -26,3 +26,21 @@
     (is (= (dissoc the-map :d) {:a 1 :b 2 :c 3})) ; key not present
     )
   )
+(deftest get-in-the-map-test
+  (testing "FIXME, I fail.")
+    (is (= (get-in users [:kyle :summary :average :monthly] ) 1000))
+    (is (= (get-in users [:kyle :summary :average :yearly] ) 12000))
+  )
+
+(deftest assoc-in-the-map-test
+  (testing "FIXME, I fail.")
+    (is (= (assoc-in users [:kyle :summary :average :monthly] 2000)
+           {:kyle {:date-joined "2009-01-01"
+                   :summary {:average {:monthly 2000
+                                       :yearly 12000}}}}))
+    (is (= (assoc-in users [:kyle :summary :average :yearly] 24000)
+           {:kyle {:date-joined "2009-01-01"
+                   :summary {:average {:monthly 1000
+                                       :yearly 24000}}}}))
+  )
+
