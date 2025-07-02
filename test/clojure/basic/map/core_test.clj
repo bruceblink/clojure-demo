@@ -44,3 +44,16 @@
                                        :yearly 24000}}}}))
   )
 
+(deftest update-in-the-map-test
+  (testing "FIXME, I fail.")
+  (is (= (update-in users [:kyle :summary :average :monthly] + 500)
+         {:kyle {:date-joined "2009-01-01"
+                 :summary {:average {:monthly 1500
+                                     :yearly 12000}}}})
+      )
+  (is (= (update-in users [:kyle :summary :average :yearly] * 2)
+         {:kyle {:date-joined "2009-01-01"
+                 :summary {:average {:monthly 1000
+                                     :yearly 24000}}}})
+      )
+  )
