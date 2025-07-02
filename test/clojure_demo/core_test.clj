@@ -4,7 +4,10 @@
 
 (deftest a-test
   (testing "FIXME, I fail."
-    (not (= 0 1))))
+    (not (= 0 1))
+    )
+  )
+
 (deftest conj-test
   (testing "conj function"
     (is (= (conj [1 2 3] 4) [1 2 3 4]))
