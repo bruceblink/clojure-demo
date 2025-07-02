@@ -1,4 +1,4 @@
-(ns clojure-demo.core)
+(ns clojure.basic.core)
 
 (defn foo
   "I don't do a whole lot."
