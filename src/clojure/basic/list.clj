@@ -1,4 +1,4 @@
-(ns clojure.basic.list.list)
+(ns clojure.basic.list)
 
 (defn foo
   "I don't do a whole lot."

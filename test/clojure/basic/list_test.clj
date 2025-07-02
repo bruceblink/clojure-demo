@@ -1,6 +1,6 @@
-(ns clojure.basic.list.core_test
+(ns clojure.basic.list_test
   (:require [clojure.test :refer :all]
-            [clojure.basic.list.list :refer :all]))
+            [clojure.basic.list :refer :all]))
 
 (deftest a-test
   (testing "FIXME, I fail."

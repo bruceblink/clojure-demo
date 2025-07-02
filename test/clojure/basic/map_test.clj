@@ -1,6 +1,6 @@
-(ns clojure.basic.map.core_test
+(ns clojure.basic.map_test
   (:require [clojure.test :refer :all]
-            [clojure.basic.map.map :refer :all]))
+            [clojure.basic.map :refer :all]))
 
 (deftest the-map-test
   (testing "FIXME, I fail."
