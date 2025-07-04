@@ -13,3 +13,8 @@
     (is (= (not-zero-expenses [-2 -1 0 1 2]) [-2 -1 1 2]))
     )
   )
+
+(deftest test-factorial
+  (testing "factorial of 5")
+    (is (= (factorial 5) 120))
+  )

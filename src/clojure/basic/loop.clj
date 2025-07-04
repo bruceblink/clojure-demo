@@ -34,3 +34,9 @@
   )
 
 (not-zero-expenses [-2 -1 0 1 2])
+
+(defn factorial [n]
+  (let [numbers (range 1 (+ n 1))]
+    (reduce * 1 numbers)
+    )
+  )
