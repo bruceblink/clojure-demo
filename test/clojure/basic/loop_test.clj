@@ -7,3 +7,9 @@
     (is (= (loop-examples 4 ) 6))
     )
   )
+
+(deftest test-filter
+  (testing "filter non-zero expenses"
+    (is (= (not-zero-expenses [-2 -1 0 1 2]) [-2 -1 1 2]))
+    )
+  )

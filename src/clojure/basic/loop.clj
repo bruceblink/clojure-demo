@@ -8,7 +8,7 @@
         )
       )
   )
-
+;;;
 (defn run-report [user]
   (println "Running report for user:" user))
 
@@ -22,7 +22,15 @@
 
 (dispatch-reporting-jobs ["Alice" "Bob" "Charlie"])
 
-(dotimes [x 5]
-  (println "x is:" x))
-
 (map inc (range 5))
+
+(defn non-zero? [x]
+  (if (zero? x)
+    false
+    true)
+  )
+(defn not-zero-expenses [expenses]
+  (filter non-zero? expenses)
+  )
+
+(not-zero-expenses [-2 -1 0 1 2])
