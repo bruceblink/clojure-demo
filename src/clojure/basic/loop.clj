@@ -21,3 +21,8 @@
   )
 
 (dispatch-reporting-jobs ["Alice" "Bob" "Charlie"])
+
+(dotimes [x 5]
+  (println "x is:" x))
+
+(map inc (range 5))
