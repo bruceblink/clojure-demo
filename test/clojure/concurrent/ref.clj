@@ -18,12 +18,14 @@
   (testing "FIXME, I fail."
       (is
           (add-new-user "amit" 1000000)
-          {"amit" {:id 2,
-                   :login "amit",
-                   :monthly-budget 1000000,
-                   :total-expenses 0
-                   }
-               }
+          {
+              "amit" {
+                  :id 2,
+                  :login "amit",
+                  :monthly-budget 1000000,
+                  :total-expenses 0
+                  }
+              }
           )
       )
   )
