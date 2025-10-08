@@ -10,3 +10,12 @@
    :total-expenses 0
    }
   )
+
+(defn add-new-user [login budget-amount]
+  (dosync
+    (let [current-number (count @all-users)
+          user (new-user (inc current-number) login budget-amount)]
+         (alter all-users assoc login user)
+      )
+    )
+  )
