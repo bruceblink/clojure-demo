@@ -9,6 +9,8 @@
     (is (= "Ram" (first friends) ))
     (is (= ["Bashir" "Antony" "Buddha"] (rest friends) ))
     (is (= "Buddha" (friends 3) ))
+    (is (= ["Pericardia" "Ram" "Bashir" "Antony" "Buddha"] (cons "Pericardia" friends)))
+    (is (= ["Ram" "Bashir" "Antony" "Buddha"] friends))     ;; cons doesn't modify friend
     )
   )
 
