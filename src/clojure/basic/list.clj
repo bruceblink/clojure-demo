@@ -6,3 +6,5 @@
   (println x "Hello, World!"))
 
 (peek (list 1 2 3) )
+;; 定义一个list
+(def friends-list '("Ram" "Bashir" "Antony" "Buddha"))
