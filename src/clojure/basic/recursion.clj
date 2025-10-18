@@ -36,3 +36,19 @@
     (recur (rest numbers) (+ total (first numbers)))
     )
   )
+
+;; 简化my-sum
+(defn my-sum1 [numbers]
+  (if (empty? numbers)
+    0
+    (+ (first numbers) (my-sum1 (rest numbers)))
+    )
+  )
+;; 优化my-sum1
+(defn my-sum2 [numbers]
+  (reduce (fn [acc x] (+ acc x)) 0 numbers)
+  )
+;; 继续优化my-sum1
+(defn my-sum3 [numbers]
+  (reduce + numbers)
+  )
