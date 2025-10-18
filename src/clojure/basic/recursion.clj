@@ -1,4 +1,6 @@
-(ns clojure.basic.recursion)
+(ns clojure.basic.recursion
+  (:require [clojure.core.reducers :as r])
+  )
 
 ;; 定义递归函数
 (defn count-down [number]
@@ -52,3 +54,14 @@
 (defn my-sum3 [numbers]
   (reduce + numbers)
   )
+;; 并行sum
+(defn parallel-sum [numbers]
+  (r/fold + numbers)
+  )
+;; 普通sum
+(defn sum [numbers]
+  (reduce + numbers)
+  )
+(def numbers (into [] (range 0 10000000)))
+(time (sum numbers))                  ;; "Elapsed time: 67.7645 msecs"
+(time (parallel-sum numbers))         ;; "Elapsed time: 37.2484 msecs"
