@@ -1,4 +1,4 @@
-(ns clojure.concurrent.ref
+(ns clojure.concurrent.ref_test
   (:require [clojure.test :refer :all]
             [clojure.concurrent.ref :refer :all]
             ))

@@ -1,4 +1,4 @@
-(ns clojure.basic.vector_test
+(ns clojure.basic.vector-test
   (:require [clojure.test :refer :all]
             [clojure.basic.vector :refer :all])
   (:import (clojure.lang PersistentVector)))

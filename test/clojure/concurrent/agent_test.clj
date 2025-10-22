@@ -1,4 +1,4 @@
-(ns clojure.concurrent.agent_test
+(ns clojure.concurrent.agent-test
   (:require [clojure.test :refer :all]
             [clojure.concurrent.agent :refer :all]
             ))

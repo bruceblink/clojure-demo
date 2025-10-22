@@ -1,4 +1,4 @@
-(ns clojure.basic.map_test
+(ns clojure.basic.map-test
   (:require [clojure.test :refer :all]
             [clojure.basic.map :refer :all]))
 

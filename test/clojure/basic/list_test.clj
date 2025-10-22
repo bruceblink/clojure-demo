@@ -1,4 +1,4 @@
-(ns clojure.basic.list_test
+(ns clojure.basic.list-test
   (:require [clojure.test :refer :all]
             [clojure.basic.list :refer :all])
   (:import (clojure.lang PersistentList)))

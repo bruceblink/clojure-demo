@@ -1,4 +1,4 @@
-(ns clojure.basic.function_test
+(ns clojure.basic.function-test
   (:require [clojure.test :refer :all]
             [clojure.basic.function :refer :all])
   )

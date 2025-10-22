@@ -1,5 +1,6 @@
-(ns clojure.concurrent.delay
-  (:require [clojure.test :refer :all]))
+(ns clojure.concurrent.delay_test
+  (:require [clojure.test :refer :all]
+            [clojure.concurrent.delay :refer :all]))
 
 (deftest agent-test
   (testing "FIXME, I fail."
