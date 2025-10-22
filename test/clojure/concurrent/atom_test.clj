@@ -34,6 +34,10 @@
                                   (println "trying 5")
                                   (conj v 5)))
                     )
+      ;; print打印输出结果是如下
+      ;; trying 4
+      ;; trying 5
+      ;; trying 5
       (is (= #{1 2 3 4 5} @xs))
       )
     )
