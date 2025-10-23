@@ -10,6 +10,8 @@
       (is (= 100 @total-rows))
       (swap! total-rows + 100 )
       (is (= 200 @total-rows) )              ;; update atom
+      (not (compare-and-set! total-rows 200 "101"))         ;; 此处cas无法更新total-rows
+      (is (compare-and-set! total-rows @total-rows "101"))  ;; cas不使用值语义，它要求atom的值跟你传入它的第二个参数必须一样(必须是相同对象(identical))
       )
     )
   )
