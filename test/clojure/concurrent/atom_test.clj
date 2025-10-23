@@ -12,6 +12,16 @@
       (is (= 200 @total-rows) )              ;; update atom
       (not (compare-and-set! total-rows 200 "101"))         ;; 此处cas无法更新total-rows
       (is (compare-and-set! total-rows @total-rows "101"))  ;; cas不使用值语义，它要求atom的值跟你传入它的第二个参数必须一样(必须是相同对象(identical))
+      (reset! total-rows 100)                               ;; 重置 total-rows
+      (is (compare-and-set! total-rows 100 101))            ;; 这个可以更新成功的原因是Clojure会对数据进行boxed (Java中的装箱将基本类型转成对象)
+      (is (identical? -128 -128))                           ;; 对于整数类型的数据 在byte范围相同的数据装箱后是同一对象
+      (is (identical? 127 127))
+      (is (compare-and-set! total-rows 101 128))            ;; 将total-rows更新为128
+      (is (= 128 @total-rows))
+      (not (compare-and-set! total-rows 128 200))           ;; 此时的数字128和 @total-rows并不是同一对象，所以更新失败
+      (not (identical? 128 @total-rows))
+      (is (identical? @total-rows @total-rows))
+      (is (compare-and-set! total-rows @total-rows 200))    ;; 此时若是要更新total-rows， 我们必须使用@total-rows作为old_value参数的值
       )
     )
   )
