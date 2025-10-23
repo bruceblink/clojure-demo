@@ -15,3 +15,13 @@
     (is (= "I karate chop Kanye East! Take that!" (x-chop "Kanye East")) )
     )
   )
+
+(deftest test-destructuring-parameters
+  (testing "test destructuring first parameters "
+    (is (= "oven" (return-first-element ["oven" "bike" "war-axe"])))
+    )
+
+  (testing "test destructuring mulity parameters "
+    (is (= ["oven" "bike"] (return-mulity-parameters ["oven" "bike" "war-axe" "swift"])))
+    )
+  )

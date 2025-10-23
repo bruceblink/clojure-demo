@@ -47,3 +47,14 @@
   ([name]
    (x-chop name "karate"))
   )
+
+(defn return-first-element
+  "解构参数列表 ,Return参数列表的第一个元素"
+  [[first-thing]]
+  first-thing
+  )
+
+(defn return-mulity-parameters
+  [[fst snd  _]]
+  [fst snd ]
+  )
