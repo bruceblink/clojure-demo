@@ -40,3 +40,10 @@
                                                     ;; Second argument: 17
                                                     ;; Other arguments: (true Karthik :coder)
 
+(defn x-chop
+  ""
+  ([name chop-type]
+   (str "I " chop-type " chop " name "! Take that!"))
+  ([name]
+   (x-chop name "karate"))
+  )
