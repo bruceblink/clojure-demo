@@ -118,3 +118,25 @@
       )
     )
   )
+
+(defn echo-watcher
+  "观察器"
+  [key _ old new]
+  (println key old "=>" new)
+  )
+
+(deftest test-watcher
+  (testing "test watcher"
+    (let [sarah (atom {:name "Sarah" :age 25})
+          called (atom nil)
+          ]
+      ;; 添加观察器1
+      (with-redefs [println (fn [& args] (reset! called args))] ;; 使用 with-redefs 替换 println 输出
+        (add-watch sarah :echo echo-watcher)                 ;; 添加观察器1
+        (swap! sarah update-in [:age] inc)                  ;; 更新sarah 的age
+        )
+      (is (= {:name "Sarah" :age 26} @sarah))
+      (is (= [:echo {:age  25 :name "Sarah"} "=>" {:age  26 :name "Sarah"}] @called))   ;; 验证观察器输出字符串
+      )
+    )
+  )
