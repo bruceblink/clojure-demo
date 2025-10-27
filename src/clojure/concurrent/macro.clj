@@ -12,7 +12,7 @@
   )
 
 (defmacro wait-futures
-  "等待所有future vector的值"
+  "Return一个vector: 等待所有future的值的vector"
   [& args]
   `(doseq [f# (futures ~@args)]
      @f#
