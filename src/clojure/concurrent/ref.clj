@@ -53,3 +53,37 @@
       )
     )
   )
+
+(defn attack
+  "攻击目标"
+  [aggressor target]
+  (dosync
+    (let [damage (* (rand 0.1) (:strength @aggressor ))]
+      (commute target update-in [:health] #(max 0 (- % damage)))
+      )
+    )
+  )
+
+(defn heal
+  "给目标加血"
+  [healer target]
+  (dosync
+    (let [aid (* (rand 0.1)) (:mana @healer)]
+      (when (pos? aid)
+        (commute healer update-in [:mana] - (max 5 (/ aid 5)))
+        (commute target update-in [:health] + aid)
+        )
+      )
+    )
+  )
+
+(defn alive? (comp pos? :health))
+
+(defn play
+  [character action other]
+  (while (and (alive? @character)
+              (alive? @other)
+              (action character other))
+    (Thread/sleep ^long (rand-int 50))                      ;; 这里将(rand-int 50)转换成long, 避免编译器警告
+    )
+  )
